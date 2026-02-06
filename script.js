@@ -9,7 +9,7 @@ const displayCategories = (categories = []) => {
         button.id = `btn-${category.category_id}`
 
         button.className = "px-6 py-2.5 bg-[#151520] border border-[#2a2a3e] text-gray-300 font-medium rounded-full whitespace-nowrap hover:border-[#ff1f3d] hover:text-white hover:-translate-y-0.5 transition-all duration-300";
-
+ 
 
         // button.className = "px-6 py-3 bg-gradient-primary text-white font-semibold rounded-full shadow-lg shadow-[#ff1f3d]/30 hover:shadow-[#ff1f3d]/40 hover:-translate-y-0.5 transition-all duration-300"
 
@@ -18,7 +18,7 @@ const displayCategories = (categories = []) => {
 
         button.textContent = category.category
         categoryContainer.appendChild(button)
-        // console.log(button)
+        console.log(button)
 
     })
 }
@@ -28,7 +28,7 @@ const loadCategories = async () => {
         const response = await fetch(`${api_base}/categories`)
         const data = await response.json()
         const { categories } = data
-        // console.log(categories)
+        console.log(categories)
         displayCategories(categories)
     }
     catch (err) {
